@@ -2,6 +2,16 @@ name: Manual Workflow
 
 on:
   workflow_dispatch:
+    inputs:
+      customer:
+        description: Customer Name
+        required: true
+        default: ABC
+
+      environment:
+        description: Environment
+        required: true
+        default: QA
 
 jobs:
   my-first-manual-job:
@@ -16,3 +26,8 @@ jobs:
 
       - name: Show Files
         run: ls -la
+
+      - name: Show Inputs
+        run: |
+          echo: "Customer": "${{github.event.inputs.customer}}"
+          echo: "Environment": "${{github.event.inputs.environment}}"

@@ -29,5 +29,5 @@ jobs:
 
       - name: Show Inputs
         run: |
-          echo: "Customer": "${{github.event.inputs.customer}}"
-          echo: "Environment": "${{github.event.inputs.environment}}"
+          echo: "Customer: ${{github.event.inputs.customer}}"
+          echo: "Environment: ${{github.event.inputs.environment}}"

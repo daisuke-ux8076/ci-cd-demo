@@ -31,3 +31,11 @@ jobs:
         run: |
           echo "Customer: ${{github.event.inputs.customer}}"
           echo "Environment: ${{github.event.inputs.environment}}"
+
+      - name: QA Step
+        if: github.event.inputs.environment == 'QA'
+        run: echo "Running QA Validation"
+
+      - name: Prod Step
+        if: github.event.inputs.environment == 'Prod'
+        run: echo "Running Prod Validation"

@@ -39,3 +39,6 @@ jobs:
       - name: Prod Step
         if: github.event.inputs.environment == 'Prod'
         run: echo "Running Prod Validation"
+
+      - name: Read Secret
+        run: echo "Hello ${{ secrets.MY_NAME }}"
